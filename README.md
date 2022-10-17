@@ -4,7 +4,7 @@
 - pnpm init
 - pnpm add typescript -D
 - pnpm tsc --init 
-```生成 `tsconfig.json` 文件```
+```generate `tsconfig.json` file```
 - pnpm add nodemon ts-node @types/node -D
 
 ## script config
