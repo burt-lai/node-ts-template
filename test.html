@@ -9,6 +9,7 @@
   <body>
     <button id="get">Get</button>
     <button id="post">Post</button>
+    <button id="ai">AI 生成 Post</button>
     <script>
       const getBtn = document.getElementById('get')
       getBtn.addEventListener('click', () => {
@@ -26,6 +27,24 @@
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ name: 'post-body' }),
+        })
+          .then(res => res.json())
+          .then(res => {
+            console.log('post - res:', res)
+          })
+      })
+      const aiBtn = document.getElementById('ai')
+      aiBtn.addEventListener('click', () => {
+        fetch('https://idea.edu.cn/ccnl-act/triton/generate/', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            style: '写实',
+            input_text: 'cyberpunk city',
+            is_prompt: 1,
+          }),
         })
           .then(res => res.json())
           .then(res => {
