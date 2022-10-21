@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试express请求</title>
+  </head>
+  <body>
+    <button id="get">Get</button>
+    <button id="post">Post</button>
+    <script>
+      const getBtn = document.getElementById('get')
+      getBtn.addEventListener('click', () => {
+        fetch('http://localhost:4000/?a=100&b=200')
+          .then(res => res.json())
+          .then(res => {
+            console.log('get - res:', res)
+          })
+      })
+      const postBtn = document.getElementById('post')
+      postBtn.addEventListener('click', () => {
+        fetch('http://localhost:4000/', {
+          method: 'post',
+          body: JSON.stringify({ name: 'post-body' }),
+        })
+          .then(res => res.json())
+          .then(res => {
+            console.log('post - res:', res)
+          })
+      })
+    </script>
+  </body>
+</html>
