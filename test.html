@@ -22,6 +22,9 @@
       postBtn.addEventListener('click', () => {
         fetch('http://localhost:4000/', {
           method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({ name: 'post-body' }),
         })
           .then(res => res.json())
