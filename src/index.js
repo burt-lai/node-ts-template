@@ -10,8 +10,6 @@ app.get('/', (req, res) => {
   console.log('\nGET 请求-------------------')
   console.log('req.query:', req.query)
   console.log('req.params:', req.params)
-  console.log('req.body:', req.body)
-  // console.log(req.route)
   console.log('GET 请求 end-------------------\n')
   res.json({
     name: 'get',
@@ -23,7 +21,6 @@ app.post('/', (req, res) => {
   console.log('req.query:', req.query)
   console.log('req.params:', req.params)
   console.log('req.body:', req.body)
-  // console.log(req.route)
   console.log('POST 请求 end-------------------\n')
 
   res.json({
